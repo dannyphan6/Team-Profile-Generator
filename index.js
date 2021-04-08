@@ -5,6 +5,8 @@ const engineer = require("./lib/Engineer");
 const intern = require("./lib/Intern");
 const manager = require("./lib/Manager");
 
+let finalTeam = [];
+
 function managerQuestions() {
     const questions = [
         {
@@ -35,12 +37,10 @@ function managerQuestions() {
         }
     ];
     return inquirer.prompt(questions).then(response => {
-        const manager = new Manager (
-            response.managerName,
-            response.managerId,
-            response.managerEmail,
-            response.managerOffice,
-        )
+        const manager = new Manager(response.managerName, response.managerId, response.managerEmail, response.managerOffice)
+
+        manager.push(finalTeam)
+        console.log(finalTeam);
         
         if(response.addNew === "Engineer") {
             engineerQuestions();
