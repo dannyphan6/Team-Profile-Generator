@@ -30,12 +30,31 @@ function managerQuestions() {
         {
             type: "list",
             name: "addNew",
-            message: "Would you like to add another person to the team?",
-            choices: ["Yes", "No"]
+            message: "Would you like to add another member to the team? If so, please select the type of team member.",
+            choices: ["Engineer", "Employee", "Intern", "Done building team!"]
         }
     ];
-    return inquirer.prompt(questions);
+    return inquirer.prompt(questions).then(response => {
+        const manager = new Manager (
+            response.managerName,
+            response.managerId,
+            response.managerEmail,
+            response.managerOffice,
+        )
+        
+        if(response.addNew === "Engineer") {
+            engineerQuestions();
+        } else if(response.addNew === "Employee") {
+            employeeQuestions();
+        } else if(response.addNew === "Intern") {
+            internQuestions();
+        } else {
+            return;
+        }
+    });
 };
+
+managerQuestions();
 
 function engineerQuestions() {
     const questions = [
