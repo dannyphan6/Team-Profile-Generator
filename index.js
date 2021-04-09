@@ -8,6 +8,12 @@ const Manager = require("./lib/Manager");
 // Final list of all team members 
 let finalTeam = [];
 
+function createPage() {
+    fs.writeFile(index.html, response, err => {
+        if (err) throw err;
+    });
+};
+
 function addMember() {
     const question = [
         {
@@ -17,16 +23,23 @@ function addMember() {
             choices: ["Manager", "Engineer", "Employee", "Intern", "Done building team!"]
         },
     ];
+
     return inquirer.prompt(question).then( response => {
         switch(response.addNew) {
             case "Manager":
                 managerQuestions();
+            break;
             case "Engineer":
                 engineerQuestions();
+            break;
             case "Employee":
                 employeeQuestions();
+            break;
             case "Intern":
                 internQuestions();
+            break;
+            default:
+                createPage();
         };
     });
 };
@@ -55,16 +68,19 @@ function managerQuestions() {
         },
     ];
 
+    // Creates new "Manager" with user response to questions
     return inquirer.prompt(questions).then(response => {
         const manager = new Manager(
             response.managerName, 
             response.managerId, 
             response.managerEmail, 
             response.managerOffice
-        )
+        );
+
+        addMember();
 
         finalTeam.push(manager);
-        console.log(finalTeam);
+        // console.log(finalTeam);
     
     });
 };
@@ -95,6 +111,7 @@ function engineerQuestions() {
         }
     ];
 
+    // Creates new "Engineer" with user response to questions
     return inquirer.prompt(questions).then( response => {
         const engineer = new Engineer(
             response.engineerName,
@@ -103,8 +120,10 @@ function engineerQuestions() {
             response.engineerGitHub
         );
 
+        addMember();
+
         finalTeam.push(engineer);
-        console.log(finalTeam);
+        // console.log(finalTeam);
 
     });
 };
@@ -128,6 +147,7 @@ function employeeQuestions() {
         }
     ];
 
+    // Creates new "Employee" with user response to questions
     return inquirer.prompt(questions).then( response => {
         const employee = new Employee(
             response.employeeName,
@@ -135,8 +155,10 @@ function employeeQuestions() {
             response.employeeEmail
         );
 
+        addMember();
+
         finalTeam.push(employee);
-        console.log(finalTeam);
+        // console.log(finalTeam);
 
     });
 };
@@ -165,6 +187,7 @@ function internQuestions() {
         },
     ];
 
+    // Creates new "Intern" with user response to questions
     return inquirer.prompt(questions).then( response => {
         const intern = new Intern(
             response.internName,
@@ -173,8 +196,10 @@ function internQuestions() {
             response.internSchool
         );
 
+        addMember();
+
         finalTeam.push(intern);
-        console.log(finalTeam);
+        // console.log(finalTeam);
 
     });
 };
