@@ -1,6 +1,5 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const Employee = require("./lib/Employee");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
@@ -100,7 +99,7 @@ function addMember() {
             type: "list",
             name: "addNew",
             message: "Would you like to add another member to the team? If so, please select the type of team member.",
-            choices: ["Manager", "Engineer", "Employee", "Intern", "Done building team!"]
+            choices: ["Manager", "Engineer", "Intern", "Done building team!"]
         },
     ];
 
@@ -111,9 +110,6 @@ function addMember() {
                 break;
             case "Engineer":
                 engineerQuestions();
-                break;
-            case "Employee":
-                employeeQuestions();
                 break;
             case "Intern":
                 internQuestions();
@@ -201,41 +197,6 @@ function engineerQuestions() {
         );
 
         finalTeamEngineer.push(engineer);
-        // console.log(finalTeam);
-
-        addMember();
-
-    });
-};
-
-function employeeQuestions() {
-    const questions = [
-        {
-            type: "input",
-            name: "employeeName",
-            message: "Please enter the Employee's name."
-        },
-        {
-            type: "input",
-            name: "employeeId",
-            message: "Please enter the Employee's ID."
-        },
-        {
-            type: "input",
-            name: "employeeEmail",
-            message: "Please enter the Employee's email."
-        }
-    ];
-
-    // Creates new "Employee" with user response to questions
-    return inquirer.prompt(questions).then(response => {
-        const employee = new Employee(
-            response.employeeName,
-            response.employeeId,
-            response.employeeEmail
-        );
-
-        finalTeamEmployee.push(employee);
         // console.log(finalTeam);
 
         addMember();
