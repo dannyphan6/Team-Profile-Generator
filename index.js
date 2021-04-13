@@ -4,7 +4,7 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 
-// Final list of all team members 
+// Final list of all team member types
 let finalTeamEngineer = [];
 let finalTeamManager = [];
 let finalTeamIntern = [];
@@ -12,63 +12,72 @@ let finalTeamIntern = [];
 function createPage() {
     fs.writeFile("index.html", `
     <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <title>Team Profile Generator</title>
-</head>
-<body>
-    <main>
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-              <h1 class="display-4">Team Profile Generator</h1>
-              </div>
-              ${createCardManager()}
-              ${createCardEngineer()}
-              ${createCardIntern()}
-          </div>
-    </main>
-</body>
-</html>`, err => {
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+            integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+        <title>Dream Team</title>
+    </head>
+    
+    <body>
+        <main>
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">Meet The Dream Team!</h1>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                ${createCardManager()}
+                ${createCardEngineer()}
+                ${createCardIntern()}
+        </main>
+    </body>
+    
+    </html>`, err => {
         if (err) throw err;
     });
-};
-
-function createCardEngineer() {
-    let team = ""
-    for (let i = 0; i < finalTeamEngineer.length; i++) {
-        team += `
-        <div class="card bg-primary text-white">
-            <div class="card-body">
-                <h3 class="card-title">${finalTeamEngineer[i].name}</h3>
-                <h4 class="card-subtitle"><i class="fas fa-mug-hot">${finalTeamEngineer[i].role}</i></h4>
-                <p>ID: ${finalTeamEngineer[i].id}</p>
-                <p>Email: ${finalTeamEngineer[i].email}</p>
-                <p>GitHub: ${finalTeamEngineer[i].github}</p>
-            </div>
-        </div>
-        `
-    };
-    return team;
 };
 
 function createCardManager() {
     let team = ""
     for (let i = 0; i < finalTeamManager.length; i++) {
         team += `
-        <div class="card bg-primary text-white">
-            <div class="card-body">
-                <h3 class="card-title">${finalTeamManager[i].name}</h3>
-                <h4 class="card-subtitle"><i class="fas fa-mug-hot">${finalTeamManager[i].role}</i></h4>
-                <p>ID: ${finalTeamManager[i].id}</p>
-                <p>Email: ${finalTeamManager[i].email}</p>
-                <p>Office Number: ${finalTeamManager[i].officeNumber}</p>
-            </div>
-        </div>
+                <div class="cols">
+                    <div class="card bg-primary text-white">
+                        <div class="card-body">
+                            <h3 class="card-title">${finalTeamManager[i].name}</h3>
+                            <h4 class="card-subtitle"><i class="fas fa-mug-hot">${finalTeamManager[i].role}</i></h4>
+                            <p>ID: ${finalTeamManager[i].id}</p>
+                            <p>Email: ${finalTeamManager[i].email}</p>
+                            <p>Office Number: ${finalTeamManager[i].officeNumber}</p>
+                        </div>
+                    </div>
+                </div>
+        `
+    };
+    return team;
+};
+
+function createCardEngineer() {
+    let team = ""
+    for (let i = 0; i < finalTeamEngineer.length; i++) {
+        team += `
+                <div class="cols">
+                    <div class="card bg-primary text-white">
+                        <div class="card-body">
+                            <h3 class="card-title">${finalTeamEngineer[i].name}</h3>
+                            <h4 class="card-subtitle"><i class="fas fa-glasses">${finalTeamEngineer[i].role}</i></h4>
+                            <p>ID: ${finalTeamEngineer[i].id}</p>
+                            <p>Email: ${finalTeamEngineer[i].email}</p>
+                            <p>GitHub: ${finalTeamEngineer[i].github}</p>
+                        </div>
+                    </div>
+                </div>
         `
     };
     return team;
@@ -78,20 +87,21 @@ function createCardIntern() {
     let team = ""
     for (let i = 0; i < finalTeamIntern.length; i++) {
         team += `
-        <div class="card bg-primary text-white">
-            <div class="card-body">
-                <h3 class="card-title">${finalTeamIntern[i].name}</h3>
-                <h4 class="card-subtitle"><i class="fas fa-mug-hot">${finalTeamIntern[i].role}</i></h4>
-                <p>ID: ${finalTeamIntern[i].id}</p>
-                <p>Email: ${finalTeamIntern[i].email}</p>
-                <p>School: ${finalTeamIntern[i].school}</p>
-            </div>
-        </div>
+                <div class="cols">
+                    <div class="card bg-primary text-white">
+                        <div class="card-body">
+                            <h3 class="card-title">${finalTeamIntern[i].name}</h3>
+                            <h4 class="card-subtitle"><i class="fas fa-user-graduate">${finalTeamIntern[i].role}</i></h4>
+                            <p>ID: ${finalTeamIntern[i].id}</p>
+                            <p>Email: ${finalTeamIntern[i].email}</p>
+                            <p>School: ${finalTeamIntern[i].school}</p>
+                        </div>
+                    </div>
+                </div>
         `
     };
     return team;
 };
-
 
 function addMember() {
     const question = [
@@ -100,7 +110,7 @@ function addMember() {
             name: "addNew",
             message: "Would you like to add another member to the team? If so, please select the type of team member.",
             choices: ["Manager", "Engineer", "Intern", "Done building team!"]
-        },
+        }
     ];
 
     return inquirer.prompt(question).then(response => {
@@ -141,7 +151,7 @@ function managerQuestions() {
             type: "input",
             name: "managerOffice",
             message: "Please enter the Manager's office number."
-        },
+        }
     ];
 
     // Creates new "Manager" with user response to questions
@@ -225,7 +235,7 @@ function internQuestions() {
             type: "input",
             name: "internSchool",
             message: "Please enter the school that the Intern attended."
-        },
+        }
     ];
 
     // Creates new "Intern" with user response to questions
