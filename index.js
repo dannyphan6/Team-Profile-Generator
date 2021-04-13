@@ -76,7 +76,7 @@ function createCardEngineer() {
                             <h4 class="card-subtitle"><i class="fas fa-glasses"> ${finalTeamEngineer[i].role}</i></h4><br>
                             <p>ID: ${finalTeamEngineer[i].id}</p>
                             <p>Email: <a href="mailto:${finalTeamEngineer[i].email}">${finalTeamEngineer[i].email}</a></p>
-                            <p>GitHub: ${finalTeamEngineer[i].github}</p>
+                            <p>GitHub: <a href="https://www.github.com/${finalTeamEngineer[i].github}">${finalTeamEngineer[i].github}</a></p>
                         </div>
                     </div>
                 </div>
