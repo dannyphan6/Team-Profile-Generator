@@ -14,7 +14,7 @@
 
   Below is an example of the generated HTML webpage:
 
-  ![Team Profile Generator](./assets/images/team-profile-generator.png)
+  ![Team Profile Generator](./assets/images/team-profile-generator.PNG)
 
   ## Installation
   Before running the application, the user must execute the command "npm install" to install all of the required dependencies. Tests were also created for this application, so you'll also want to execute the command "npm install --save-dev jest" After both commands are ran, then you're all set!
