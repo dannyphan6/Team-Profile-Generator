@@ -6,6 +6,16 @@ p {
     font-size: 1.5rem;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
 .custom-card-title {
     padding: 3%;
     background-color: rgb(151, 57, 45);

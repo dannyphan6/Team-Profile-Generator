@@ -55,7 +55,7 @@ function createCardManager() {
                             <h3 class="card-title">${finalTeamManager[i].name}</h3>
                             <h4 class="card-subtitle"><i class="fas fa-mug-hot"> ${finalTeamManager[i].role}</i></h4><br>
                             <p>ID: ${finalTeamManager[i].id}</p>
-                            <p>Email: ${finalTeamManager[i].email}</p>
+                            <p>Email: <a href="mailto:${finalTeamManager[i].email}">${finalTeamManager[i].email}</a></p>
                             <p>Office Number: ${finalTeamManager[i].officeNumber}</p>
                         </div>
                     </div>
@@ -75,7 +75,7 @@ function createCardEngineer() {
                             <h3 class="card-title">${finalTeamEngineer[i].name}</h3>
                             <h4 class="card-subtitle"><i class="fas fa-glasses"> ${finalTeamEngineer[i].role}</i></h4><br>
                             <p>ID: ${finalTeamEngineer[i].id}</p>
-                            <p>Email: ${finalTeamEngineer[i].email}</p>
+                            <p>Email: <a href="mailto:${finalTeamEngineer[i].email}">${finalTeamEngineer[i].email}</a></p>
                             <p>GitHub: ${finalTeamEngineer[i].github}</p>
                         </div>
                     </div>
@@ -95,7 +95,7 @@ function createCardIntern() {
                             <h3 class="card-title">${finalTeamIntern[i].name}</h3>
                             <h4 class="card-subtitle"><i class="fas fa-user-graduate"> ${finalTeamIntern[i].role}</i></h4><br>
                             <p>ID: ${finalTeamIntern[i].id}</p>
-                            <p>Email: ${finalTeamIntern[i].email}</p>
+                            <p>Email: <a href="mailto:${finalTeamIntern[i].email}">${finalTeamIntern[i].email}</a></p>
                             <p>School: ${finalTeamIntern[i].school}</p>
                         </div>
                     </div>
