@@ -20,21 +20,23 @@ function createPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-            integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+            integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+            <link rel="stylesheet" href="./style.css">
         <title>Dream Team</title>
     </head>
     
     <body>
         <main>
-            <div class="jumbotron jumbotron-fluid">
-                <div class="container">
-                    <h1 class="display-4">Meet The Dream Team!</h1>
+            <div class="card text-center">
+                <h1 class="card-title">Meet the Dream Team!</h1>
+            </div>
+            <div class="container">
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    ${createCardManager()}
+                    ${createCardEngineer()}
+                    ${createCardIntern()}
                 </div>
             </div>
-            <div class="row row-cols-1 row-cols-md-2 g-4">
-                ${createCardManager()}
-                ${createCardEngineer()}
-                ${createCardIntern()}
         </main>
     </body>
     
@@ -47,11 +49,11 @@ function createCardManager() {
     let team = ""
     for (let i = 0; i < finalTeamManager.length; i++) {
         team += `
-                <div class="cols">
+                <div class="col-3 mb-1 mt-4">
                     <div class="card bg-primary text-white">
                         <div class="card-body">
                             <h3 class="card-title">${finalTeamManager[i].name}</h3>
-                            <h4 class="card-subtitle"><i class="fas fa-mug-hot">${finalTeamManager[i].role}</i></h4>
+                            <h4 class="card-subtitle"><i class="fas fa-mug-hot"> ${finalTeamManager[i].role}</i></h4>
                             <p>ID: ${finalTeamManager[i].id}</p>
                             <p>Email: ${finalTeamManager[i].email}</p>
                             <p>Office Number: ${finalTeamManager[i].officeNumber}</p>
@@ -67,11 +69,11 @@ function createCardEngineer() {
     let team = ""
     for (let i = 0; i < finalTeamEngineer.length; i++) {
         team += `
-                <div class="cols">
+                <div class="col-3 mb-1 mt-4">
                     <div class="card bg-primary text-white">
                         <div class="card-body">
                             <h3 class="card-title">${finalTeamEngineer[i].name}</h3>
-                            <h4 class="card-subtitle"><i class="fas fa-glasses">${finalTeamEngineer[i].role}</i></h4>
+                            <h4 class="card-subtitle"><i class="fas fa-glasses"> ${finalTeamEngineer[i].role}</i></h4>
                             <p>ID: ${finalTeamEngineer[i].id}</p>
                             <p>Email: ${finalTeamEngineer[i].email}</p>
                             <p>GitHub: ${finalTeamEngineer[i].github}</p>
@@ -87,11 +89,11 @@ function createCardIntern() {
     let team = ""
     for (let i = 0; i < finalTeamIntern.length; i++) {
         team += `
-                <div class="cols">
+                <div class="col-3 mb-1 mt-4">
                     <div class="card bg-primary text-white">
                         <div class="card-body">
                             <h3 class="card-title">${finalTeamIntern[i].name}</h3>
-                            <h4 class="card-subtitle"><i class="fas fa-user-graduate">${finalTeamIntern[i].role}</i></h4>
+                            <h4 class="card-subtitle"><i class="fas fa-user-graduate"> ${finalTeamIntern[i].role}</i></h4>
                             <p>ID: ${finalTeamIntern[i].id}</p>
                             <p>Email: ${finalTeamIntern[i].email}</p>
                             <p>School: ${finalTeamIntern[i].school}</p>
