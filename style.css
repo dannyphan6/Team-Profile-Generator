@@ -1,7 +1,17 @@
+body {
+    font-family: "Quicksand", sans-serif;
+}
+
 p {
     font-size: 1.5rem;
 }
 
 .custom-card-title {
     padding: 3%;
+    background-color: rgb(151, 57, 45);
+    color: white;
+}
+
+h4 {
+    font-family: "Quicksand", sans-serif;
 }
