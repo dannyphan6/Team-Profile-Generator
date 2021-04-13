@@ -28,14 +28,13 @@ function createPage() {
     <body>
         <main>
             <div class="card text-center">
-                <h1 class="card-title">Meet the Dream Team!</h1>
+                <h1 class="card-title custom-card-title">Meet the Dream Team!</h1>
             </div>
             <div class="container">
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     ${createCardManager()}
                     ${createCardEngineer()}
                     ${createCardIntern()}
-                </div>
             </div>
         </main>
     </body>
