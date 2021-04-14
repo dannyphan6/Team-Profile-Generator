@@ -10,7 +10,7 @@ let finalTeamManager = [];
 let finalTeamIntern = [];
 
 function createPage() {
-    fs.writeFile("index.html", `
+    fs.writeFile("./dist/index.html", `
     <!DOCTYPE html>
     <html lang="en">
     
@@ -22,7 +22,7 @@ function createPage() {
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./assets/style/style.css">
+        <link rel="stylesheet" href="../assets/style/style.css">
         <title>Dream Team</title>
     </head>
     
@@ -53,7 +53,7 @@ function createCardManager() {
                     <div class="card bg-primary text-white">
                         <div class="card-body">
                             <h3 class="card-title">${finalTeamManager[i].name}</h3>
-                            <h4 class="card-subtitle"><i class="fas fa-mug-hot"> ${finalTeamManager[i].role}</i></h4><br>
+                            <h4 class="card-subtitle"><i class="fas fa-mug-hot"></i><span id="custom-text"> ${finalTeamManager[i].role}</span></h4><br>
                             <p>ID: ${finalTeamManager[i].id}</p>
                             <p>Email: <a href="mailto:${finalTeamManager[i].email}">${finalTeamManager[i].email}</a></p>
                             <p>Office Number: ${finalTeamManager[i].officeNumber}</p>
@@ -73,7 +73,7 @@ function createCardEngineer() {
                     <div class="card bg-primary text-white">
                         <div class="card-body">
                             <h3 class="card-title">${finalTeamEngineer[i].name}</h3>
-                            <h4 class="card-subtitle"><i class="fas fa-glasses"> ${finalTeamEngineer[i].role}</i></h4><br>
+                            <h4 class="card-subtitle"><i class="fas fa-glasses"></i><span id="custom-text"> ${finalTeamEngineer[i].role}</span></h4><br>
                             <p>ID: ${finalTeamEngineer[i].id}</p>
                             <p>Email: <a href="mailto:${finalTeamEngineer[i].email}">${finalTeamEngineer[i].email}</a></p>
                             <p>GitHub: <a href="https://www.github.com/${finalTeamEngineer[i].github}">${finalTeamEngineer[i].github}</a></p>
@@ -93,7 +93,7 @@ function createCardIntern() {
                     <div class="card bg-primary text-white">
                         <div class="card-body">
                             <h3 class="card-title">${finalTeamIntern[i].name}</h3>
-                            <h4 class="card-subtitle"><i class="fas fa-user-graduate"> ${finalTeamIntern[i].role}</i></h4><br>
+                            <h4 class="card-subtitle"><i class="fas fa-user-graduate"></i><span id="custom-text"> ${finalTeamIntern[i].role}</span></h4><br>
                             <p>ID: ${finalTeamIntern[i].id}</p>
                             <p>Email: <a href="mailto:${finalTeamIntern[i].email}">${finalTeamIntern[i].email}</a></p>
                             <p>School: ${finalTeamIntern[i].school}</p>
